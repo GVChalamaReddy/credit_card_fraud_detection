@@ -11,7 +11,15 @@ The data set has also been modified with principal component analysis (PCA) to m
 
 
 
-
+## Technologies Used
+- **python** - 3.13.1
+- **numpy** - 2.2.1
+- **pandas** - 2.2.3
+- **matplotlib** - 3.10.0
+- **seaborn** - 0.13.2
+- **statsmodels** - 0.14.4
+- **sklearn** - 1.6.1
+  
 ## Acknowledgements
 
 - This project was inspired by Upgrad IIIT Bangalore PG program on ML and AI.
