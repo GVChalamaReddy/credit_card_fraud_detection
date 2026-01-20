@@ -9,3 +9,14 @@ The data set has also been modified with principal component analysis (PCA) to m
 
 ## Methodology
 
+
+
+
+## Acknowledgements
+
+- This project was inspired by Upgrad IIIT Bangalore PG program on ML and AI.
+- This project was part of Capstone Project.
+
+
+## Contact
+Created by @[GVChalamaReddy](https://github.com/GVChalamaReddy) - feel free to contact me!
