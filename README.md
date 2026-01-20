@@ -18,6 +18,17 @@ The dataset contains transactions made by credit cards in September 2013 by Euro
 - **Imbalance**: Typically, fraud cases account for less than 0.2% of all transactions, making this a classic imbalanced classification problem.
   
 ## Methodology
+The project follows a standard data science pipeline:
+- **Data Preprocessing & EDA**:
+  - **Skewness Mitigation**: Addressed heavy skewness in the Time and Amount variables using the Yeo-Johnson Power Transformation.
+  - **Visualization**: Histograms and skewness coefficients were analyzed before and after transformation to ensure features were more normally distributed.
+  - **Scaling**: Applied StandardScaler or PowerTransformer to ensure all features contribute equally, which is particularly critical for distance-based models like SVM and KNN.
+  - **Splitting** data into Training and Testing sets using `Stratified Shuffling` to maintain class proportions.
+- **Handling Imbalance**: To prevent the model from being biased toward the majority class, we implemented `ADASYN (Adaptive Synthetic Sampling)` or `SMOTE (Synthetic Minority Over-sampling Technique)` or `Random Over-sampling/Under-sampling` to balance the training data, within the training pipeline. This ensures that the model learns the distinct patterns of fraudulent behavior.
+- **Feature Engineering**: Assessing if certain PCA components are more indicative of fraud.
+- **Cross-Validation Strategy**
+  - We employed a rigorous StratifiedKFold cross-validation approach with $k=[3, 5]$.
+  - This strategy ensures that each fold maintains the same percentage of fraudulent transactions as the original dataset.
 
 
 
