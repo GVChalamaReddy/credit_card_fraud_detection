@@ -5,7 +5,7 @@ For many banks, retaining high profitable customers is the number one business g
 
 ## Data dictionary
 The data set is taken from the **Kaggle website (https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)** and has a total of **2,84,807 transactions**; out of these, **492 are fraudulent**. Since the data set is highly imbalanced, it needs to be handled before model building.
-The data set has also been modified with principal component analysis (PCA) to maintain confidentiality. Apart from `time` and `amount`, all the other features (V1, V2, V3, up to V28) are the principal components obtained using PCA. The feature `time` contains the seconds elapsed between the first transaction in the data set and the subsequent transactions. The feature 'amount' is the transaction amount. The feature `class` represents class labelling, and it takes the value of 1 in cases of fraud and 0 in others.
+The data set has also been modified with principal component analysis (PCA) to maintain confidentiality. Apart from `time` and `amount`, all the other features (V1, V2, V3, up to V28) are the principal components obtained using PCA. The feature `time` contains the seconds elapsed between the first transaction in the data set and the subsequent transactions. The feature `amount` is the transaction amount. The feature `class` represents class labelling, and it takes the value of 1 in cases of fraud and 0 in others.
 
 ## Methodology
 
