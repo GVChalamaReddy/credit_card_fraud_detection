@@ -33,6 +33,9 @@ The project follows a standard data science pipeline:
 ## Models Used
 To ensure a robust comparison, the following machine learning models were implemented:
 - **Logistic Regression**: Used as a baseline model for binary classification.
+- **Decision Tree**: A non-linear model that provides high interpretability by splitting data based on feature importance.
+- **Support Vector Machines (SVM)**: A model that finds the optimal hyperplane to maximize the margin between classes.
+- **K-Nearest Neighbors (KNN)**: A distance-based algorithm used to classify transactions based on their proximity to known fraud/non-fraud instances.
 - **Random Forest Classifier**: A powerful ensemble method (Bagging) that reduces variance and handles non-linear patterns.
 - **XGBoost Classifier**: An optimized Gradient Boosting (Boosting) framework designed for speed and high performance on structured data.
 
