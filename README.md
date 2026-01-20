@@ -30,8 +30,37 @@ The project follows a standard data science pipeline:
   - We employed a rigorous StratifiedKFold cross-validation approach with $k=[3, 5]$.
   - This strategy ensures that each fold maintains the same percentage of fraudulent transactions as the original dataset.
 
+## Models Used
+To ensure a robust comparison, the following machine learning models were implemented:
+- **Logistic Regression**: Used as a baseline model for binary classification.
+- **Random Forest Classifier**: A powerful ensemble method (Bagging) that reduces variance and handles non-linear patterns.
+- **XGBoost Classifier**: An optimized Gradient Boosting (Boosting) framework designed for speed and high performance on structured data.
 
+## Model Building / Training and Evaluation
+The training and evaluation process was designed to address the class imbalance:
+- **Training Strategy**: Models were trained on the balanced dataset (after oversampling/undersampling).
+- **Cross-Validation**: We employed StratifiedKFold to ensure each fold remained representative of the minority class.
+- **Hyperparameter Tuning**: We utilized GridSearchCV to optimize parameters such as learning rate, tree depth, and estimator counts.
+- **Evaluation Priority**: In fraud detection, the cost of a `False Negative` (missing fraud) is much higher than a `False Positive`. Therefore, we prioritized `Recall` and `AUPRC` (Area Under the Precision-Recall Curve) over standard Accuracy.
 
+## Evaluation Metrics
+Given the extreme imbalance, Accuracy is not a reliable metric. We optimized and evaluated the models using:
+- **AUC-ROC Score**: The primary metric used to find the best model, measuring the ability to distinguish between classes.
+- **Precision-Recall Curves**: To understand the trade-off between capturing all fraud (Recall) and minimizing false alarms (Precision).
+- **Confusion Matrix**: To visualize True Positives (caught fraud) and False Positives (customer friction).
+
+## Model Performance and Results
+The models were evaluated based on the following metrics:
+- **Precision**: The accuracy of the positive predictions (avoiding false alarms).
+- **Recall (Sensitivity)**: The ability to detect all actual fraud cases.
+- **F1-Score**: The harmonic mean of Precision and Recall, providing a single score for balance.
+- **ROC-AUC & AUPRC**: Measuring the trade-off between true positive and false positive rates.
+
+`Note: The XGBoost model typically outperformed the baseline models, achieving a high AUPRC while maintaining a Recall above 80%.`
+
+## Conclusion
+This project demonstrates that while standard models achieve high accuracy on imbalanced data by simply predicting the majority class, they fail at the actual task of fraud detection. By applying `ADASYN` and utilizing ensemble methods like `XGBoost`, we significantly improved the model's ability to detect fraudulent patterns. The final model provides a reliable automated system for flagging suspicious transactions for further investigation.
+  
 ## Technologies Used
 - **python** - 3.13.1
 - **numpy** - 2.2.1
